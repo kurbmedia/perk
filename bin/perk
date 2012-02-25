@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+var argv		= process.argv.slice(2),
+	fs				= require("fs"),
+	path			= require("path"),
+	root      = __dirname,
+	commands	= {};
+
+
+commands.new = function(){
+	
+};
+
+commands.server = function(){
+
+};

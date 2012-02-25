@@ -1,0 +1,34 @@
+{
+  "name"          	: "perk",
+  "description"   	: "Mobile development with Node, Coffeescript, Backbone, and Stylus",
+  "url"           	: "https://github.com/kurbmedia/perk",
+  "keywords"      	: ["mobile", "server", "client", "browser"],
+  "author"        	: "kurb media, llc <dev@kurbmedia.com>",
+  "contributors"  	: [],
+  "dependencies"  	: {
+		"backbone"			: ">= 0.9.1",
+		"underscore"  	: ">=1.3.1",
+		"coffee-script" : ">=1.1.3",
+		"stylus" 				: ">=0.24.0",
+		"strata" 				: ">=0.11.0",
+		"stitch"				: ">=0.3.3"
+  },
+	
+	"repository"			: {
+		"type": "git",
+		"url": "git://github.com/kurbmedia/perk.git"
+	},
+	
+	"devDependencies"	: { 
+		"mocha": "~0.12.1",
+		"should": "*" 
+	},
+	
+	"bin"							: { 
+		"perk": "./bin/perk"
+	},
+	
+	"lib"							: "./lib",
+	"main"						: "lib/perk.js",
+	"version"					: "0.0.1"
+}
