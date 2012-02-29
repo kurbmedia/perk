@@ -1,0 +1,8 @@
+{
+  "name"          	: "my_app",
+  "description"   	: "Application description",
+	"version"					: "0.0.1",
+  "dependencies"  	: {
+		"perk"					: ">= 0.0.1"
+  }
+}
