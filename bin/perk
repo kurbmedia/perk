@@ -1,14 +1,13 @@
 #!/usr/bin/env node
 
 coffee = require('coffee-script')
-Perk 	 = require('perk')
+Perk 	 = require('../lib/perk')
 
 var argv		= process.argv.slice(2),
 	fs				= require("fs"),
 	path			= require("path"),
-	root      = __dirname,
 	commands	= {};
 
 
-var perk = new Perk.Package({ root: root });
+var perk = new Perk.Package();
 perk.serve();
