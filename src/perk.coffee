@@ -1,18 +1,19 @@
-require('backbone')
-require('underscore')
-path   = require('path')
 stitch = require('stitch')
 stylus = require('stylus')
 
-class App
+require('backbone')
+require('underscore')
 
 class Package
+	
+	build: ->
+		path = "./build"
 		
 	serve: ->
 		connect = require('connect')
 		http		= require('http')		
 		server = connect.createServer()
-		.use('/app.js', @packJS())
+		.use('/app.js', @packJS().createServer())
 		.use('/app.css', @packCSS)
 		.use(connect.static('./public'))
 		
@@ -36,15 +37,20 @@ class Package
 		resp.writeHead(200, {"Content-Type": "text/css"});
 		resp.end(response)
 		
-	packJS: ()->
-		jspack	= stitch.createPackage(
-			paths: ['./app/controllers', './app/models', './app/views', './lib']
-		).createServer()
+	packJS: ()-> 
+		stitch.createPackage( 
+			paths:[
+				"#{__dirname}/interface",
+				"#{__dirname}/components",
+				"./app/controllers", 
+				"./app/models", 
+				"./app/views", 
+				"./lib"
+			])
 
 
-Perk 					 = {}
-Perk.App 			 = App
-Perk.Package	 = Package
-module.exports = Perk
-	
-	
+Perk 					  = @Perk = {}
+Perk.App				= require("./app")
+Perk.Package	  = Package
+
+module.exports  = Perk
