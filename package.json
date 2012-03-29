@@ -29,6 +29,6 @@
 	},
 	
 	"lib"							: "./lib",
-	"main"						: "./lib/perk.js",
+	"main"						: "./lib/perk",
 	"version"					: "0.0.1"
 }
